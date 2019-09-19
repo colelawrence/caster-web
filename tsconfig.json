@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "./out",
     "target": "es5",
+    "baseUrl": "./src",
+    "outDir": "./out",
     "lib": ["dom", "es6"],
     "module": "commonjs",
     "noImplicitAny": false,
     "removeComments": true,
-    "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "paths": {
+      "@helpers": ["./helpers.ts"]
+    }
   },
   "include": [
     "./src/*.tsx",

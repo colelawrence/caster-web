@@ -1,7 +1,7 @@
 // Bootstrapping for entire application
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
-import { changeString } from '../helpers'
+import { changeString } from '@helpers'
 
 export function App({ name }) {
   const [count, setCount] = useState(0)
