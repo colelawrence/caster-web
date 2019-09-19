@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./out",
+    "target": "es5",
+    "lib": ["dom", "es6"],
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "h"
+  },
+  "include": [
+    "./src/*.tsx",
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "../backend/index.d.ts"
+  ]
+}

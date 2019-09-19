@@ -1,0 +1,6 @@
+*.log
+node_modules
+out
+dist/*.js
+dist/*.map
+.DS_Store

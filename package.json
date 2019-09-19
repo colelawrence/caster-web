@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "devDependencies": {
+    "csx": "^10.0.0",
+    "preact": "^10.0.0-rc.3",
+    "preact-router": "^2.6.1",
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
+    "typestyle": "^2.0.4",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
+  }
+}
