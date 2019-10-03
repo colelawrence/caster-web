@@ -1,0 +1,30 @@
+$height-ratio: 60%;
+
+.widget {
+    display: flex;
+    overflow: hidden;
+    .option {
+        flex: 1;
+        position: relative;
+        .backdrop {
+            background-position: center;
+            background-size: cover;
+            filter: blur(10rem);
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding-bottom: $height-ratio;
+        }
+        .thumb {
+            z-index: 1;
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: $height-ratio;
+        }
+    }
+}

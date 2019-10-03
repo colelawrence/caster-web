@@ -1,6 +1,6 @@
 *.log
 node_modules
 out
-dist/*.js
-dist/*.map
+dist
+static/lib
 .DS_Store

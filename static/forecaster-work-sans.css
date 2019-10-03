@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Forecaster Work Sans";
+    src: url(ForecasterWorkSans-VF.ttf);
+    font-feature-settings: "liga" 1, "kern" 1;
+    /* font-variation-settings: "wght" 900; */
+    font-weight: 100 900;
+}

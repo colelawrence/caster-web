@@ -1,0 +1,43 @@
+@import url(sanitize.css);
+
+html {
+    background: whitesmoke;
+    color: #030507;
+}
+
+body {
+    font-family: "Forecaster Work Sans", sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.header, .container {
+    padding: 0 1rem;
+}
+
+h1, h2, h3 {
+    font-family: "Forecaster Work Sans", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #121920;
+}
+
+h4, h5, h6 {
+    font-family: "Forecaster Work Sans", sans-serif;
+    font-weight: 550;
+    color: #06111d;
+}
+
+b, strong {
+    font-family: "Forecaster Work Sans", sans-serif;
+    font-weight: 600;
+}
+
+a {
+    color: #094589;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

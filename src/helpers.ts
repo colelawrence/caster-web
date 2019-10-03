@@ -5,3 +5,7 @@ export function changeString(
     handler(evt.target.value)
   }
 }
+
+export function cdn(path: string) {
+  return (CDN_PREFIX + ('/' + path).replace(/\/\/+/g, '/'))
+}

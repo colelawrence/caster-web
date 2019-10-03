@@ -1,17 +1,29 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "prestart": "webpack --config webpack.dll.config.js",
+    "prestart:dev": "webpack --config webpack.dll.config.js",
+    "start:dev": "webpack-dev-server"
   },
   "devDependencies": {
+    "bloc-utils": "0.0.3",
+    "bulma": "^0.7.5",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
     "csx": "^10.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "preact": "^10.0.0-rc.3",
     "preact-router": "^2.6.1",
+    "rxjs": "^6.5.3",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
     "ts-loader": "^6.1.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.6.3",
     "typestyle": "^2.0.4",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.2"
   }
 }

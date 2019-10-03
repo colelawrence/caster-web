@@ -15,9 +15,10 @@
     }
   },
   "include": [
+    "./src/*.d.ts",
     "./src/*.tsx",
+    "./src/*.ts",
     "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "../backend/index.d.ts"
+    "./src/**/*.ts"
   ]
 }
