@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "baseUrl": "./src",
     "outDir": "./out",
     "lib": ["dom", "es6"],
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "sourceMap": true,
     "jsx": "react",
+    "jsxFactory": "React.createElement",
     "paths": {
       "@helpers": ["./helpers.ts"]
     }

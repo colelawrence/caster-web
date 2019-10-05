@@ -8,12 +8,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 
 const USE_SOURCEMAPS = true
-const IS_DEV = true
+const IS_DEV = !/prod/i.test(process.env.NODE_ENV)
 
 /** @param {string[]} seg */
 const root = (...seg) => path.resolve(__dirname, ...seg)
 
-/** @type {import("webpack").WebpackOptions} */
+/** @type {import("webpack").Configuration} */
 module.exports = {
   entry: {
     main: './src/bootstrap.tsx',
@@ -85,6 +85,10 @@ module.exports = {
     : 'source-map',
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    alias: {
+      "react": "preact/compat",
+      "react-dom": "preact/compat",
+    },
     // @ts-ignore
     plugins: [new TsconfigPathsPlugin({ configFile: root('tsconfig.json') })],
   },

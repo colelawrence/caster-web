@@ -9,16 +9,16 @@ const USE_SOURCEMAPS = true
 /** @param {string[]} seg */
 const root = (...seg) => path.resolve(__dirname, ...seg)
 
-/** @type {(isDev: boolean) => import("webpack").Configuration} */
-module.exports = isDev => ({
+/** @type {import("webpack").Configuration} */
+module.exports = {
   entry: {
-    library: ['react', 'rxjs', 'csx', 'typestyle'],
+    library: ['react', 'react-dom', 'rxjs'],
   },
   mode: 'production',
   output: {
     filename: './[name].dll.js',
     path: root('static/lib'),
-    library: '[name]',
+    library: 'library',
     // webpack has the ability to generate path info in the output bundle. However, this puts garbage collection pressure on projects that bundle thousands of modules.
     pathinfo: USE_SOURCEMAPS,
     devtoolModuleFilenameTemplate:
@@ -26,6 +26,10 @@ module.exports = isDev => ({
   },
   devtool: 'source-map',
   resolve: {
+    alias: {
+      "react": "preact/compat",
+      "react-dom": "preact/compat",
+    },
     extensions: ['.jsx', '.js', '.json'],
   },
   optimization: {
@@ -42,4 +46,4 @@ module.exports = isDev => ({
       path: root('static/lib/[name].json'),
     }),
   ],
-})
+}

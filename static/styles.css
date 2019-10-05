@@ -3,6 +3,7 @@
 html {
     background: whitesmoke;
     color: #030507;
+    font-size: 18px;
 }
 
 body {
@@ -31,6 +32,11 @@ h4, h5, h6 {
 b, strong {
     font-family: "Forecaster Work Sans", sans-serif;
     font-weight: 600;
+}
+
+button {
+    background: white;
+    border: 2px solid #030507;
 }
 
 a {

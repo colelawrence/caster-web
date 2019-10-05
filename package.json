@@ -2,6 +2,9 @@
   "private": true,
   "scripts": {
     "start": "webpack",
+    "open-analyze": "open https://chrisbateman.github.io/webpack-visualizer/",
+    "analyze": "webpack --profile --json > webpack-stats.json",
+    "analyze-dll": "webpack --config webpack.dll.config.js --profile --json > webpack-dll-stats.json",
     "prestart": "webpack --config webpack.dll.config.js",
     "prestart:dev": "webpack --config webpack.dll.config.js",
     "start:dev": "webpack-dev-server"
@@ -9,11 +12,13 @@
   "devDependencies": {
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
-    "bloc-utils": "0.0.3",
+    "@types/webpack": "^4.39.2",
+    "bloc-utils": "^0.0.4",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "csx": "^10.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "preact": "^10.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rxjs": "^6.5.3",

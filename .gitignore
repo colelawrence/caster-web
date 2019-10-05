@@ -4,3 +4,4 @@ out
 dist
 static/lib
 .DS_Store
+webpack*stats.json
