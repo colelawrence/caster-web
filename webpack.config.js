@@ -12,7 +12,7 @@ const USE_SOURCEMAPS = true
 /** @param {string[]} seg */
 const root = (...seg) => path.resolve(__dirname, ...seg)
 
-/** @type {(isDev: boolean) => import("webpack").Configuration} */
+/** @type {(isDev: boolean) => import("webpack").WebpackOptions} */
 module.exports = isDev => ({
   entry: {
     main: './src/bootstrap.tsx',
