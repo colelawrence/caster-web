@@ -8,17 +8,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 
 const USE_SOURCEMAPS = true
+const IS_DEV = true
 
 /** @param {string[]} seg */
 const root = (...seg) => path.resolve(__dirname, ...seg)
 
-/** @type {(isDev: boolean) => import("webpack").WebpackOptions} */
-module.exports = isDev => ({
+/** @type {import("webpack").WebpackOptions} */
+module.exports = {
   entry: {
     main: './src/bootstrap.tsx',
     theme: './src/theme/bootstrap.tsx',
   },
-  mode: isDev ? 'development' : 'production',
+  mode: IS_DEV ? 'development' : 'production',
   output: {
     filename: './[name].js',
     path: root('dist'),
@@ -34,8 +35,8 @@ module.exports = isDev => ({
         use: {
           loader: require.resolve('ts-loader'),
           options: {
-            transpileOnly: isDev,
-            experimentalWatchApi: isDev,
+            transpileOnly: IS_DEV,
+            experimentalWatchApi: IS_DEV,
             compilerOptions: {
               sourceMap: USE_SOURCEMAPS,
               baseUrl: root(),
@@ -50,7 +51,7 @@ module.exports = isDev => ({
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isDev,
+              hmr: IS_DEV,
             },
           },
           'css-loader',
@@ -77,7 +78,7 @@ module.exports = isDev => ({
     },
     allowedHosts: ['https://caster.ngrok.io', 'https://caster-cdn.ngrok.io'],
   },
-  devtool: isDev
+  devtool: IS_DEV
     ? USE_SOURCEMAPS
       ? 'inline-source-map'
       : 'eval'
@@ -91,7 +92,7 @@ module.exports = isDev => ({
     // make our custom shiki-loader (syntax highlighter) available
     modules: ['node_modules'],
   },
-  optimization: isDev
+  optimization: IS_DEV
     ? {
         removeAvailableModules: false,
         removeEmptyChunks: false,
@@ -106,7 +107,7 @@ module.exports = isDev => ({
     new webpack.DllReferencePlugin({
       context: root(),
       // @ts-ignore
-      manifest: require('./static/lib/library.json')
+      manifest: require('./static/lib/library.json'),
     }),
 
     new webpack.DefinePlugin({
@@ -123,4 +124,4 @@ module.exports = isDev => ({
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
-})
+}

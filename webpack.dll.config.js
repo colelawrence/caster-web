@@ -12,7 +12,7 @@ const root = (...seg) => path.resolve(__dirname, ...seg)
 /** @type {(isDev: boolean) => import("webpack").Configuration} */
 module.exports = isDev => ({
   entry: {
-    library: ['preact', 'rxjs', 'csx', 'typestyle'],
+    library: ['react', 'rxjs', 'csx', 'typestyle'],
   },
   mode: 'production',
   output: {

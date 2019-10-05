@@ -1,7 +1,7 @@
 import { changeString } from '@helpers'
 import { Behavior } from 'bloc-utils'
-import { Observer } from 'bloc-utils/preact'
-import { h } from 'preact'
+import { Observer } from 'bloc-utils/react'
+import React from 'react'
 import { Setting } from './ThemeApp'
 
 export function SettingInput(props: {
@@ -13,7 +13,7 @@ export function SettingInput(props: {
   const unit = props.setting.unit
   return (
     <fieldset>
-      <label for={id}>{props.setting.title}</label>
+      <label htmlFor={id}>{props.setting.title}</label>
       <br />
       {unit.kind === 'px' ? (
         <Observer

@@ -1,13 +1,12 @@
-import { cdn, changeString } from '@helpers'
-import { Behavior } from 'bloc-utils'
-import { Observer } from 'bloc-utils/preact'
-import { createContext, h } from 'preact'
-import { useContext } from 'preact/hooks'
+import { cdn } from '@helpers'
+import { Observer } from 'bloc-utils/react'
+import React, { useContext } from 'react'
 import { combineLatest, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { ThemeValue, ThemeBloc } from './ThemeApp'
+import { ThemeBloc } from './ThemeApp'
+import { ThemeValue } from './ThemeSettings'
 
-function PreviewTile({
+function OptionPreview({
   theme,
   image,
   name,
@@ -20,7 +19,7 @@ function PreviewTile({
 }) {
   return (
     <div
-      class="option"
+      className="option"
       style={{
         backgroundColor: theme.tileBackgroundColor,
         padding: `${theme.tilePaddingV} ${theme.tilePaddingH}`,
@@ -56,7 +55,7 @@ function PreviewTile({
   )
 }
 
-export function PreviewSettings() {
+export function WidgetPreview() {
   const theme = useContext(ThemeBloc)
 
   return (
@@ -65,25 +64,25 @@ export function PreviewSettings() {
       next={theme => {
         return (
           <div
-            class="widget"
+            className="widget"
             style={{
               backgroundColor: theme.backgroundColor,
               borderRadius: theme.borderRadius,
             }}
           >
-            <PreviewTile
+            <OptionPreview
               theme={theme}
               image={cdn('/images/shoe1-1.jpg')}
               price="250 USD"
               name="Nike Polk"
             />
-            <PreviewTile
+            <OptionPreview
               theme={theme}
               name="NJ Dom"
               price="350 USD"
               image={cdn('/images/shoe2-1.jpeg')}
             />
-            <PreviewTile
+            <OptionPreview
               theme={theme}
               name="Nucci"
               price="720 USD"

@@ -1,10 +1,6 @@
 import { Behavior } from 'bloc-utils'
-import {
-  initialTheme,
-  SettingsBloc,
-  ThemeValue,
-  THEME_SETTINGS,
-} from './ThemeApp'
+import { SettingsBloc } from './ThemeApp'
+import { initialTheme, ThemeValue, THEME_SETTINGS } from './ThemeSettings'
 
 export function createThemeSettingsBloc(
   value = initialTheme

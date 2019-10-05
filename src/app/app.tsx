@@ -1,6 +1,5 @@
 // Bootstrapping for entire application
-import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import React, { useState } from 'react'
 import { changeString } from '@helpers'
 
 export function App({ name }) {

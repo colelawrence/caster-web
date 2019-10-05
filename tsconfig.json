@@ -7,9 +7,9 @@
     "module": "commonjs",
     "noImplicitAny": false,
     "removeComments": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "jsx": "react",
-    "jsxFactory": "h",
     "paths": {
       "@helpers": ["./helpers.ts"]
     }
